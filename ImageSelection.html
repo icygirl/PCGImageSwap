@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style type="text/css">
+body {padding: 15px;}
+ul {
+	list-style:none;
+}
+
+.select {margin-bottom: 30px;}
+.select li {
+    width: 150px;
+    padding: 2px 4px;
+    cursor: pointer;
+}
+.select .option:hover {
+    background: #EEE;
+}
+.select .option.active {
+    background: #DDD;
+}
+.select .label {font-weight: bold; font-size: 16px;}
+
+#imageToSwap {
+    position: absolute;
+    left: 400px;
+    top: 10px;
+    width: 600px;
+}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(window).load(function(){
+    
+var $image = $('#imageToSwap');
+
+var $selects = $('.select').on('click', '.option', function() {
+    $(this).addClass('active').siblings().removeClass('active');
+    
+    var src = 'file:///Users/vherron/Documents/ShowerGlass/{metal}{glass}.jpg';
+    $selects.each(function() {
+        src = src.replace(RegExp('\\{' + $(this).data('name') + '\\}', 'g'), $(this).find('.active').data('value'));
+    });
+    $image.prop('src', src);
+})
+
+$selects.filter(':first').find('.option:first').trigger('click');
+
+    });
+
+</script>
+</head>
+<body>
+<img id="imageToSwap">
+
+<ul class="select select-metal" data-name="metal">
+    <li class="label">Metal</li>
+    <li class="option active" data-value="brass">Brass</li>
+    <li class="option" data-value="brushednickel">Brushed Nickel</li>
+    <li class="option" data-value="oilrubbed">Oil Rubbed</li>
+</ul>
+    
+<ul class="select select-glass" data-name="glass">
+    <li class="label">Glass</li>
+    <li class="option active" data-value="clear">Clear</li>
+    <li class="option" data-value="frosted">Frosted</li>
+    <li class="option" data-value="green">Green</li>
+</ul>
+
+</body>
+</html>
