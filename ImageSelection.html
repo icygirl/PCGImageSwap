@@ -34,20 +34,20 @@ ul {
 }
 .select .label {font-weight: bold; font-size: 16px;}
 .img-opt {
-	width:100px;
+	width:80px;
 	}
 
 #imageToSwap {
-    position: relative;
-    top: 20px;
     width: 600px;
 }
 .app-box {
-	position: absolute;
-	top: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content:center;
 	}
 .app {
-	display: inline-block;
+	margin: 10px;
+	min-width:100px;
 }
 </style>
 
@@ -81,7 +81,7 @@ Create a cohesive design element by customizing the back-to-back towel bars and 
 </p><p>
 Allow our experienced design consultants to help you choose a shower enclosure customized to your space with the look and additional features fit to you.
 </p>
-	<div class="app-box">
+<div class="app-box">	
 <div class="app">
 <ul class="select select-metal" data-name="metal">
     <li class="label">FINISH OPTIONS</li>
@@ -100,6 +100,6 @@ Allow our experienced design consultants to help you choose a shower enclosure c
 <div class="app">
 <img id="imageToSwap">
 </div>
-	</div>
+</div>
 </body>
 </html>
