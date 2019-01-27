@@ -4,17 +4,27 @@
 <title></title>
 <style type="text/css">
 body {
-	background-color:#FFFFFF;
-	padding: 15px;}
+	background-color:rgba(255, 255, 255, 0.5);
+	padding: 15px;
+	}
+h1 {
+	font-size: 17px;
+	text-align:center;
+	}
+p {
+font-size:15px;
+}
 ul {
 	list-style:none;
 }
 
 .select {margin-bottom: 30px;}
 .select li {
-    width: 150px;
     padding: 2px 4px;
     cursor: pointer;
+}
+.option {
+	display: inline-block;
 }
 .select .option:hover {
     background: #EEE;
@@ -23,12 +33,17 @@ ul {
     background: #DDD;
 }
 .select .label {font-weight: bold; font-size: 16px;}
+.img-opt {
+	width:100px;
+	}
 
 #imageToSwap {
-    position: absolute;
-    left: 400px;
-    top: 10px;
+    position: relative;
+    top: 20px;
     width: 600px;
+}
+.app {
+	display: inline-block;
 }
 </style>
 
@@ -55,21 +70,30 @@ $selects.filter(':first').find('.option:first').trigger('click');
 </script>
 </head>
 <body>
-<img id="imageToSwap">
-
+<h1>DESIGN YOUR SHOWER</h1>
+<p>Pacific Glass Concepts offers custom shower doors and enclosures allow more light to flow through the room giving a more spacious feel. Heavier thicker glass contributes to the feeling of rigidity, as well as conveying a sense of true luxury. Our frameless shower doors are engineered and manufactured with the highest quality tempered safety glass with finely polished, smooth edges.
+</p><p>
+Create a cohesive design element by customizing the back-to-back towel bars and shower door handles along with the wall-mounted hinges and other hardware, to match the rest of your bathroom fixtures.
+</p><p>
+Allow our experienced design consultants to help you choose a shower enclosure customized to your space with the look and additional features fit to you.
+</p>
+<div class="app">
 <ul class="select select-metal" data-name="metal">
-    <li class="label">Metal</li>
-    <li class="option active" data-value="brass">Brass</li>
-    <li class="option" data-value="brushednickel">Brushed Nickel</li>
-    <li class="option" data-value="oilrubbed">Oil Rubbed</li>
+    <li class="label">FINISH OPTIONS</li>
+    <li class="option active" data-value="brass"><img class="img-opt" src="/Finish/BRASS.png"></li>
+    <li class="option" data-value="brushednickel"><img class="img-opt" src="/Finish/BRUSHED_NICKEL.png"></li>
+    <li class="option" data-value="oilrubbed"><img class="img-opt" src="/Finish/OIL_RUBBED.png"></li>
 </ul>
     
 <ul class="select select-glass" data-name="glass">
-    <li class="label">Glass</li>
-    <li class="option active" data-value="clear">Clear</li>
-    <li class="option" data-value="frosted">Frosted</li>
-    <li class="option" data-value="green">Green</li>
+    <li class="label">GLASS OPTIONS</li>
+    <li class="option active" data-value="clear"><img class="img-opt" src="/glass/CLEAR_TEMP_GLASS.png"></li>
+    <li class="option" data-value="frosted"><img class="img-opt" src="/glass/FROSTED_GLASS.png"></li>
+    <li class="option" data-value="green"><img class="img-opt" src="/glass/LOW_IRON_GLASS.png"></li>
 </ul>
-
+</div>
+<div class="app">
+<img id="imageToSwap">
+</div>
 </body>
 </html>
