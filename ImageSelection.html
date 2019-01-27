@@ -56,7 +56,7 @@ var $image = $('#imageToSwap');
 var $selects = $('.select').on('click', '.option', function() {
     $(this).addClass('active').siblings().removeClass('active');
     
-    var src = 'http://icygirl.github.io/PGCImageSwap/{metal}{glass}.jpg';
+    var src = 'http://icygirl.github.io/PCGImageSwap/{metal}{glass}.jpg';
     $selects.each(function() {
         src = src.replace(RegExp('\\{' + $(this).data('name') + '\\}', 'g'), $(this).find('.active').data('value'));
     });
